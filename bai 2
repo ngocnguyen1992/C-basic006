@@ -1,0 +1,17 @@
+#include <stdio.h>
+int main()
+{
+	int a,b;
+	printf("nhap a:");
+	scanf_s("%d", &a);
+	printf("nhap b:");
+	scanf_s("%d", &b);
+	if (a * b > 0)
+	{
+		printf("a va b cung dau");
+	}
+	else
+	{
+		printf("a va b khac dau");
+	}
+}
