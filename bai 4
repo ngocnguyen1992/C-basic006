@@ -19,7 +19,7 @@ int main()
 			{
 				max = i;
 			}
-			if (i < min)
+			if (i < min&&i>1)
 			{
 				min = i;
 			}
