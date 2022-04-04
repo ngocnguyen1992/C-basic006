@@ -5,9 +5,9 @@ int main()
 	int s = 0;
 	printf("nhap n:");
 	scanf_s("%d", &n);
-	for (int i = 1; i < n; i++)
+	for (int i = 1; i <= n; i++)
 	{
-			if (i % 2 == 0 && n%i==0)
+			if (i % 2 == 0 && n%i==0 && i<n)
 			{
 				s = s + i;
 			}
