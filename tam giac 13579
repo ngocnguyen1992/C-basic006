@@ -3,21 +3,25 @@ int main()
 {
 	int h = 5;
 	int m = 1;
-	int n = 1;
-	// 	printf("nhap  :");
-	// 	scanf("%d", &h);
-	for (int i = 1; i <= h; i++) {
-		int k = i - 1, left = 0;
-		for (int j = 1; j <= h - i; j++) {
-			printf(" ");
+	printf("nhap  :");
+	scanf_s("%d", &h);
+	for (int i = 1; i <= h; i++)
+	{
+		int n = i - 1; int r = 0;
+		for (int j = 1; j <= h - i; j++)
+		{
+			printf("-");
 		}
-		for (int j = 1; j <= 2 * i - 1; j++) {
-			printf("%d", m - (left == 0 ? k-- : k++));
-			if (k < 0) {
-				k = 1;
-				left = 1;
+		for (int j = 1; j < i*2; j++)
+		{
+			printf("%d", m-(r==0?n--:n++));
+			if(n<0)
+			{
+				n = 1;
+				r = 1;
 			}
 		}
+		
 		m += 2;
 		printf("\n");
 	}
