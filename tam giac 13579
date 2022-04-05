@@ -1,27 +1,24 @@
 #include <stdio.h>
 int main()
 {
-	int h=5;
+	int h = 5;
 	int m = 1;
 	int n = 1;
-	int k = 1;
-	//printf("nhap  :");
-	//scanf_s("%d", &h);
-	for (int i = 1; i <= h; i++)
-	{
-		for (int j = 1;j <= h - i; j++)
-		{
-			printf("-");
-		}			
-		if (m >= i)
-		{
-			m = i;
+	// 	printf("nhap  :");
+	// 	scanf("%d", &h);
+	for (int i = 1; i <= h; i++) {
+		int k = i - 1, left = 0;
+		for (int j = 1; j <= h - i; j++) {
+			printf(" ");
 		}
-		for (int j = 1; j <= i*2-1; j++)
-		{
-			printf("%d", m++);
-		}		
-		//m++;
+		for (int j = 1; j <= 2 * i - 1; j++) {
+			printf("%d", m - (left == 0 ? k-- : k++));
+			if (k < 0) {
+				k = 1;
+				left = 1;
+			}
+		}
+		m += 2;
 		printf("\n");
 	}
 }
