@@ -1,0 +1,27 @@
+#include <stdio.h>
+int main()
+{
+	int h=5;
+	int m = 1;
+	int n = 1;
+	int k = 1;
+	//printf("nhap  :");
+	//scanf_s("%d", &h);
+	for (int i = 1; i <= h; i++)
+	{
+		for (int j = 1;j <= h - i; j++)
+		{
+			printf("-");
+		}			
+		if (m >= i)
+		{
+			m = i;
+		}
+		for (int j = 1; j <= i*2-1; j++)
+		{
+			printf("%d", m++);
+		}		
+		//m++;
+		printf("\n");
+	}
+}
