@@ -8,7 +8,7 @@ int main()
 	scanf_s("%d", &n);
 	printf("uoc so cua n la : ");
 	int max = 0;
-	int min = n;
+	int min = 0;
 	for (int i = 1; i <= n; i++)
 	{
 		if (n % i == 0)
