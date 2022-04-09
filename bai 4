@@ -21,7 +21,7 @@ int main()
 			}
 			if (min == 0&&i>1)
 			{
-				min = n;
+				min = n % i == 0;
 			}
 			if (i < min && i>1)
 			{
