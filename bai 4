@@ -2,8 +2,8 @@
 int main()
 {
 	int n;
-	int s = 0;	
-	int count=0;
+	int s = 0;
+	int count = 0;
 	printf("nhap n:");
 	scanf_s("%d", &n);
 	printf("uoc so cua n la : ");
@@ -19,7 +19,11 @@ int main()
 			{
 				max = i;
 			}
-			if (i < min&&i>1)
+			if (min == 0&&i>1)
+			{
+				min = n;
+			}
+			if (i < min && i>1)
 			{
 				min = i;
 			}
