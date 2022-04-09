@@ -14,3 +14,25 @@ int main()
 	}
 		printf("%d day la so nguyen to", h);
 }
+// làm theo dạng function
+
+#include <stdio.h>
+int nguyento(int h)
+{
+	if (h < 2){
+		return 0;
+	}
+	for (int i = 2; i < h; i++){
+		if (h % i == 0)
+			return 0;
+	}
+	return 1;
+}
+int main()
+{
+	int h;
+	printf("nhap h:");
+	scanf_s("%d", &h);
+	printf("%d %s\n",h,nguyento(h)==0?"khong phai so nguyen to" : "la so nguyen to");
+}
+
