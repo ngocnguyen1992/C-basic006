@@ -1,0 +1,36 @@
+#include <stdio.h>
+void tgc(int h, char c) {
+	if (h < 2)
+	{
+		printf("chieu cao it nhat bang 2");
+		return;
+	}
+	if (h > 10)
+	{
+		printf("chieu cao nho hon 10");
+		return;
+	}
+	for (int i = 1; i <= h; i++)
+	{
+		for (int j = 1; j <= h - i; j++)
+		{
+			printf(" ");
+		}
+		for (int j = 1; j < i * 2; j++)
+		{
+			printf("%c", c);
+		}
+		printf("\n");
+	}
+}
+int main()
+{
+	int h = 5;
+	char c;
+	printf("nhap ky tu can ve\n");
+	scanf_s("%c", &c);
+	printf("nhap chieu cao tam giac\n :");
+	scanf_s("%d", &h);
+	tgc(h, c);
+	return 0;
+}
