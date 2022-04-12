@@ -1,0 +1,54 @@
+#include <stdio.h>
+int nguyento(int h)
+{
+	if (h < 2) {
+		return 0;
+	}
+	for (int i = 2; i < h; i++) {
+		if (h % i == 0)
+			return 0;
+	}
+	return 1;
+}
+void uocso(int n){
+	int s = 0;
+	int count = 0;
+	int max = 0;
+	int min = 0;
+	printf("uoc so cua %d la : ",n);
+for (int i = 1; i <= n; i++)
+{
+	if (n % i == 0)
+	{
+		printf("%d ", i);
+		count++;
+		if (i > max && i < n)
+		{
+			max = i;
+		}
+		if (min == 0 && i > 1)
+		{
+			min = n % i == 0;
+		}
+		if (i < min && i>1)
+		{
+			min = i;
+		}
+	}
+}
+printf("\n%d co : %d uoc so\n",n, count);
+printf("so lon nhat cua uoc so n la %d\n", max);
+printf("so nho nhat cua uoc so n la %d\n", min);
+}
+int main()
+{
+	int n;
+	printf("nhap so can tinh uoc so  :");
+	scanf_s("%d", &n);
+	int h;
+	printf("nhap gia tri so ban can tim:");
+	scanf_s("%d", &h);
+	uocso(n);
+	
+	printf("%d %s\n", h, nguyento(h) == 0 ? "khong phai so nguyen to" : "la so nguyen to");
+}
