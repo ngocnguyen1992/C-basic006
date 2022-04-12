@@ -14,3 +14,26 @@ int main()
 	}	
 	printf("tong cac uoc so chan cua n la %d ", s);
 }
+
+// tạo function
+
+#include <stdio.h>
+void tonguocso () {
+	int n;
+	printf("nhap n:");
+	scanf_s("%d", &n);
+	int s = 0;
+	for (int i = 1; i <= n; i++)
+	{
+		if (i % 2 == 0 && n % i == 0 && i < n)
+		{
+			s = s + i;
+		}
+	}
+	printf("tong cac uoc so chan cua n la %d ", s);
+}
+int main()
+{	
+	tonguocso();
+	return 0;
+}
