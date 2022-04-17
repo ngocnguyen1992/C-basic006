@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    int ave;
+    int count=0;
+    int s=0;
+  printf("nhap chieu dai mang n :");
+  scanf("%d",&n);
+    int arr[n];
+    for(int i = 0; i<n;i++)
+    {   scanf("%d",&arr[i]);
+        if(arr[i]%2==0)
+        {
+            count++;
+           s = s + arr[i];
+        }
+    }
+    ave = s/count;
+printf("%d",ave);
+    return 0;
+}
