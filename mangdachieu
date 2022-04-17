@@ -21,3 +21,30 @@ int main()
 printf("%d",ave);
     return 0;
 }
+
+//mảng đa chiều function
+
+#include <stdio.h>
+int mangdachieu(int arr[2][2],int s)
+{ 
+
+    	for(int i = 0; i < 2;i++)
+	{
+		for (int j = 0; j < 2; j++){
+		//printf("nhap so cho phan tu");
+		scanf("%d", &arr[i][j]);
+		printf("%d ",arr[i][j]);
+		s = s + arr[i][j];
+		}
+			printf("\n");
+	}
+
+	return s;
+}
+int main()
+{   int s=0;
+	int arr[2][2];
+	printf("nhap vao day so ban muon :");
+ 	//mangdachieu(arr,s);
+	printf("\n%d",mangdachieu(arr,s));
+}
