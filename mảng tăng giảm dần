@@ -1,0 +1,56 @@
+#include <stdio.h>
+void nhapmang(int arr[], int n)
+{
+    printf("nhap gia tri cho mang : ");
+    for (int i = 0; i < n; i++) {
+        scanf_s("%d", &arr[i]);
+    }
+}
+int giamdan(int arr[], int n) {
+    int temp;
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = i; j < n; j++) {
+            if (arr[i] > arr[j]) {
+                temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+    return 1;
+}
+int tangdan(int arr[], int n) {
+    int temp;
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = i; j < n; j++) {
+            if (arr[i] < arr[j]) {
+                temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+    return 1;
+}
+int main()
+{
+    int arr[1000];
+    int n;
+    printf("nhap chieu dai cho mang n :");
+    scanf_s("%d", &n);
+    nhapmang(arr, n);
+    giamdan(arr, n);
+    printf("mang giam dan la :");
+    for (int i = 0; i < n; i++)
+    {
+        printf(" % d", arr[i]);
+    }
+    tangdan(arr, n);
+    printf("\nmang tang dan la :");
+    for (int i = 0; i < n; i++)
+    {
+        printf(" %d", arr[i]);
+    }
+}
