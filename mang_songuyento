@@ -1,35 +1,55 @@
 #include <stdio.h>
+#include<math.h>
 int nguyento(int h)
 {
-	if (h < 2){
-		return 0;
-	}
-	for (int i = 2; i < h; i++){
-		if (h % i == 0)
-			return 0;
-	}
-	return 1;
+    if (h < 2) {
+        return 0;
+    }
+    for (int i = 2; i < h; i++) {
+        if (h % i == 0)
+            return 0;
+    }
+    return 1;
+}
+int sochinhphuong(int h)
+{
+    /*for (int i = 1; i <= h; i++)
+    {
+        if (i*i==h)
+            return 1;
+    }
+    return 0;*/
+    if((float)sqrt(h) == sqrt(h)){
+    return 1;
+    }
+    return 0;
 }
 int main()
 {
-    //int n;
-    //int count=0;
     int arr[1000];
     int h;
     int m1[1000];
     int m;
     int temp;
-  printf("nhap chieu dai cho mang h :");
-  scanf("%d",&h);
+    printf("nhap chieu dai cho mang h :");
+    scanf_s("%d", &h);
     printf("nhap gia tri cho mang : ");
-    for(int i = 0; i<h;i++){   
-        scanf("%d",&arr[i]);
+    for (int i = 0; i < h; i++) {
+        scanf_s("%d", &arr[i]);
     }
-    for(int i = 0;i<h;i++)
+    for (int i = 0; i < h; i++)
     {
-        if(nguyento(arr[i]))
+        if (nguyento(arr[i]))
         {
-            printf("%d ",arr [i]);
+            printf("so nguyen to la : %d \n", arr[i]);
+        }
+    }
+    for (int i = 0; i <= h; i++)
+    {
+        if (sochinhphuong(arr[i]))
+        {
+            printf("so chinh phuong la : %d\n ",arr[i]);
+
         }
     }
 }
