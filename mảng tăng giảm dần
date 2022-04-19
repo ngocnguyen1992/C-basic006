@@ -45,7 +45,7 @@ int main()
     printf("mang giam dan la :");
     for (int i = 0; i < n; i++)
     {
-        printf(" % d", arr[i]);
+        printf(" %d", arr[i]);
     }
     tangdan(arr, n);
     printf("\nmang tang dan la :");
