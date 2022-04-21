@@ -1,0 +1,78 @@
+#include <stdio.h>
+void nhapmang(int arr[], int n)
+{
+    printf("nhap gia tri cho mang :");
+    for (int i = 0; i < n; i++) {
+        scanf_s("%d", &arr[i]);
+    }
+}
+int giamdan(int arr[], int n) {
+    int temp;
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = i; j < n; j++) {
+            if (arr[i] < arr[j]) {
+                temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+        for (int j = 0; j < i; j++)
+        {
+            if (arr[i] == arr[j]) {
+                n--;
+                for (int j = i; j < n; j++) {
+                    arr[i] = arr[j + 1];
+                }
+                i--;
+                break;
+            }
+        }
+    }
+    for (int i = 0; i < n; i++)
+    {
+        printf(" %d", arr[i]);
+    }
+    return 1;
+}
+int tangdan(int arr[], int n) {
+    int temp;
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = i; j < n; j++) {
+            if (arr[i] > arr[j]) {
+                temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+        for (int j = 0; j < i; j++)
+        {
+            if (arr[i] == arr[j]) {
+                n--;
+                for (int j = i; j < n; j++) {
+                    arr[i] = arr[j + 1];
+                }
+                i--;
+                break;
+            }
+        }
+    }
+    for (int i = 0; i < n; i++)
+    {
+        printf(" %d", arr[i]);
+    }
+    return 1;
+}
+int main()
+{
+    int arr[1000];
+    int n;
+    printf("nhap chieu dai cho mang n :");
+    scanf_s("%d", &n);
+    nhapmang(arr, n);
+    printf("mang tang dan la :");
+    tangdan(arr, n);
+    printf("\nmang giam dan la :");
+    giamdan(arr, n);
+}
