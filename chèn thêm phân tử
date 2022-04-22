@@ -1,5 +1,5 @@
 #include <stdio.h>
-void nhapmang(int arr[], int n)
+void nhapxuatmang(int arr[], int n)
 {
     printf("nhap gia tri cho mang :");
     for (int i = 0; i < n; i++) {
@@ -12,7 +12,8 @@ int main()
     int n, m, k, p;
     printf("nhap chieu dai cho mang n :");
     scanf_s("%d", &n);
-    nhapmang(arr, n);
+    nhapxuatmang(arr, n);
+    //printf("mang ban da nhap :");
     printf("ban muon chen bao nhieu phan tu :");
     scanf_s("%d", &m);
     for (int i = 1; i <= m; i++) {
@@ -20,13 +21,13 @@ int main()
         scanf_s("%d", &k);
         printf("vi tri can chen phan tu nay :");
         scanf_s("%d", &p); 
-        for (int j = n ; j >= p - 1; j--) {
+        for (int j = n+1 ; j >= p - 1; j--) {
             arr[j + 1] = arr[j];
         }
         arr[p - 1] = k;
     }
     printf("mang sau khi chen :\n");
     for (int i = 0; i <= n+m; i++) {
-        printf("%d", arr[i]);
+        printf("%d ", arr[i]);
     }
 }
