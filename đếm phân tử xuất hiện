@@ -22,4 +22,5 @@ else
 v[j]++;
 }
 for(int i=0;i<n;i++){
-printf("%d xuat hien%d",k[i],v[i]
+printf("%d xuat hien%d",k[i],v[i]);
+}
