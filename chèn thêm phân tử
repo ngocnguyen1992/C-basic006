@@ -27,7 +27,7 @@ int main()
         arr[p - 1] = k;
     }
     printf("mang sau khi chen :\n");
-    for (int i = 0; i <= n+m; i++) {
+    for (int i = 0; i < n+m; i++) {
         printf("%d ", arr[i]);
     }
 }
