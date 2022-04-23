@@ -1,0 +1,25 @@
+int n,m=0;
+printf("nhap gia tri n");
+scanf("%d",&n);
+int a[n];
+int k[n];
+int v[n];
+for(int i =0;i<n;i++){
+printf("a[%d]=",i);
+scanf("%d",&a[i]);
+}
+for(int i=0;i<n;i++){
+for(int j=0;j<m;j++){
+if(a[n]==key[j]){
+break;
+}
+}
+if(j==m){
+k[m]=a[j];
+v[m++]=1;
+}
+else
+v[j]++;
+}
+for(int i=0;i<n;i++){
+printf("%d xuat hien%d",k[i],v[i]
