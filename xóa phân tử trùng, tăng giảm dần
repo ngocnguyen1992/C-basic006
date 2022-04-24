@@ -76,3 +76,16 @@ int main()
     printf("\nmang giam dan la :");
     giamdan(arr, n);
 }
+
+// bài thầy sửa
+
+for(int i=0;i<n-1-removed;i++){
+for(int j = i +1;j<n-1-removed;j++)
+if(a[i]==a[i+1])
+{
+removed++;
+}
+for(int k=i+1;k<n-1;j++){
+a[k]=a[k+1];
+}
+}
