@@ -35,3 +35,8 @@ scanf("%d",&a[i]);
 for(int i = 0; i<n;i++){
 printf("so %d co chieu dai la %d\n",a[i], getl(a[i]));
 }
+// đếm cách thầy
+int l=0;
+for(;n!=0;n/=10,l++);{
+return l;
+}
