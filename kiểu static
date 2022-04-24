@@ -1,0 +1,13 @@
+int *a;
+int n;
+printf("nhap n :");
+scanf("%d",&n);
+n = nhapmang(n);
+int * nhapmang(int n){
+static arr[1000];
+for(int i = 0; i < n; i++){
+printf("a[%d] =", i);
+scanf("%d",&arr[]);
+}
+return arr;
+}
