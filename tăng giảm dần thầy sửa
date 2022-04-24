@@ -1,0 +1,47 @@
+#include <stdio.h>
+void sort(int arr[],int n, int ord)
+{
+    int temp;
+    for(int i = 0; i< n;i++){
+        for(int j = i;j<n;j++){
+            if(ord == 0 && arr[i] > arr[j]){
+                temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+            if(ord == 1 && arr[i] < arr[j]){
+                temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+}
+void xuatmang(int arr[], int n){
+     for (int i = 0; i < n; i++)
+    {
+        printf(" %d", arr[i]);
+    }   
+}
+void nhapmang(int arr[], int n){
+    printf("nhap gia tri cho mang : ");
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+}
+int main()
+{
+    int arr[1000];
+    int n,ord;
+    printf("nhap chieu dai cho mang n :");
+    scanf("%d", &n);
+    printf("nhap kieu sap xep cho mang ");
+    scanf("%d",&ord);
+    nhapmang(arr, n);
+    sort(arr,n,ord);
+   // giamdan(arr, n);
+    printf("mang sau khi sap xep cua ban la :");
+    xuatmang(arr,n);
+    //tangdan(arr, n);
+}
+
