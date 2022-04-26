@@ -40,3 +40,32 @@ int l=0;
 for(;n!=0;n/=10,l++);{
 return l;
 }
+// đếm cách mình 
+
+#include <stdio.h>
+void nhapxuatmang(int arr[], int n)
+{
+    printf("nhap gia tri cho mang :");
+    for (int i = 0; i < n; i++) {
+        scanf_s("%d", &arr[i]);
+    }
+}
+int main()
+{
+    int arr[1000];
+    int n, m, k, p;
+    int count[100]={};
+    printf("nhap chieu dai cho mang n :");
+    scanf_s("%d", &n);
+    nhapxuatmang(arr, n);
+    for (int i = 0; i < n; i++) {
+        for(int j = 0; j<n;j++){
+            if (arr[j] == i) {
+            count[i]++;
+            }
+        }
+        if (count[i] != 0) {
+            printf("so %d xuat hien : %d lan\n",i, count[i]);
+        }
+    }
+}
