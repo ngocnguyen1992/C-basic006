@@ -1,0 +1,62 @@
+-- Tìm khách mua hàng có số lượng mua nhiều nhất
+SELECT Ten_DT, So_Luong, Tien
+FROM dbo.BanHang bh, dbo.DmDt dt
+WHERE bh.Ma_DT = dt.Ma_DT 
+AND Ngay_Ct >= '2013/01/01' 
+AND Ngay_Ct <= '2013/01/31'
+ORDER BY So_Luong DESC
+
+SELECT Ma_Vt,SUM(So_Luong) [TONG SO LUONG]
+FROM dbo.BanHang bh, dbo.DmDt dt
+WHERE bh.Ma_DT = dt.Ma_DT 
+AND Ngay_Ct >= '2013/01/01' 
+AND Ngay_Ct <= '2013/01/31'
+GROUP BY Ma_Vt 
+
+SELECT Ma_DT, Max(So_Luong) Best_Seller
+FROM dbo.BanHang bh 
+WHERE 
+Ngay_Ct >= '2013/01/01' 
+AND Ngay_Ct <= '2013/01/31'
+GROUP BY Ma_DT 
+ORDER BY Best_Seller DESC
+
+SELECT Ten_DT, So_Luong
+FROM dbo.DmDt dt INNER JOIN dbo.BanHang bh
+ON dt.Ma_DT = bh.Ma_DT
+WHERE So_Luong = (
+	SELECT MAX(So_Luong) 
+	FROM dbo.BanHang 
+	WHERE Ngay_Ct >= '2013/01/01' 
+	AND Ngay_Ct <= '2013/01/31')
+
+-- Tìm 10 khách có doanh số bán nhiều nhất
+
+SELECT TOP 10 Ten_DT, Tien
+FROM dbo.BanHang bh, dbo.DmDt dt
+WHERE bh.Ma_DT = dt.Ma_DT 
+AND Ngay_Ct >= '2013/01/01' 
+AND Ngay_Ct <= '2013/01/31'
+ORDER BY Tien DESC
+
+-- Tìm mặt hàng bán chạy nhất
+
+SELECT Ma_Vt, Ten_Vt 
+FROM dbo.DmVt
+WHERE Ma_Vt = (
+SELECT TOP 1 Ma_Vt 
+FROM dbo.BanHang 
+WHERE Ngay_Ct >= '2013/01/01'
+AND Ngay_Ct <= '2013/01/31'
+GROUP BY Ma_Vt 
+ORDER BY COUNT (Ma_Vt)DESC)
+
+select * from dbo.BanHang
+
+-- Liệt kê mặt hàng thuộc nhóm hàng hóa
+SELECT Ten_Vt, Nhom_Hang 
+FROM dbo.DmVt
+WHERE Nhom_Hang = 'Hang_Hoa'
+
+
+-- Liệt kê ra các hóa đơn trong tháng 9/2010 (Ngay_Ct, So_Ct, Dien_Giai0, Doanh thu, tiền thuế, Tổng tiền).
