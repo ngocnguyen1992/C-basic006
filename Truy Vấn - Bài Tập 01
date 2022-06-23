@@ -1,0 +1,17 @@
+-- Câu 1 :	Tìm các khách hàng có số lượng mua hàng nhiều nhất trong khoảng thời gian từ ‘01/01/2013’ đến ‘31/01/2013’
+
+SELECT Ma_DT, SUM (So_Luong) AS BESTSELLER
+FROM dbo.BanHang
+WHERE Ngay_Ct >= '2013/01/01' 
+	AND Ngay_Ct <= '2013/01/31'
+GROUP BY Ma_DT
+ORDER BY BESTSELLER DESC
+
+-- Câu 2 : Tìm 10 khách hàng có doanh số bán nhiều nhất trong khoảng thời gian từ ‘01/01/2013’ đến ‘31/01/2013’
+
+SELECT TOP 10 Ten_DT, Tien
+FROM dbo.BanHang bh, dbo.DmDt dt
+WHERE bh.Ma_DT = dt.Ma_DT 
+	AND Ngay_Ct >= '2013/01/01' 
+	AND Ngay_Ct <= '2013/01/31'
+ORDER BY Tien DESC
