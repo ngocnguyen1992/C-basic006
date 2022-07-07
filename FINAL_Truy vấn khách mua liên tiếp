@@ -1,0 +1,32 @@
+SELECT (ROW_NUMBER () OVER ( ORDER BY Ma_DT, Ngay_Ct ASC)) AS Stt, Ngay_Ct, Ma_DT 
+INTO #temp_banhang 
+FROM dbo.BanHang 
+GROUP BY Ngay_Ct, Ma_DT
+
+DECLARE @i INT, @j INT, @k INT, @Ma_Dt1 VARCHAR(16), @Ma_Dt2 VARCHAR(16), @Ngay1 DATE, @Ngay2 DATE
+SELECT @i = 1, @j = 0
+SELECT @k = MAX(Stt) FROM #temp_banhang
+WHILE @i <= @k
+BEGIN
+    SET @j = @i +1
+    
+    SELECT @Ma_Dt1 = Ma_DT, 
+            @Ngay1 = Ngay_Ct
+    FROM #temp_banhang 
+    WHERE Stt = @i
+
+    SELECT @Ma_Dt2 = Ma_DT, 
+            @Ngay2 = Ngay_Ct
+    FROM #temp_banhang 
+    WHERE Stt = @j
+    
+    SET @i = @i + 1
+	IF(DATEDIFF(MONTH, @Ngay1, @Ngay2) = 1 AND @Ma_Dt1 = @Ma_Dt2)
+	BEGIN
+	  PRINT ('Lien Tiep');
+	END
+	ELSE
+	BEGIN
+	  PRINT('Khong lien tiep');
+	END
+END
